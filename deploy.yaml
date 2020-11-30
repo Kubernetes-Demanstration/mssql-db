@@ -3,7 +3,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mssql-pvc
+  name: mssql-cloud-ssd
 spec:
   storageClassName: mssql-cloud-ssd
   accessModes:
@@ -57,7 +57,7 @@ spec:
         - name: db-persistent-storage
           # pointer to the configuration of HOW we want the mount to be implemented
           persistentVolumeClaim:
-            claimName: mssql-pvc
+            claimName: mssql-cloud-ssd
 
 ---
 kind: Service
