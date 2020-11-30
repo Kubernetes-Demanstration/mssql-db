@@ -79,4 +79,6 @@ spec:
     - name: mssql-port
       port: 1433
       targetPort: 1433
-  type: ClusterIP
+ # type: ClusterIP use LoadBalacer in prod, didt find any workaround on ingress-nginx
+   type: LoadBalancer
+
