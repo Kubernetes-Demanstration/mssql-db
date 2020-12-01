@@ -53,7 +53,6 @@ spec:
         volumeMounts:
           - name: db-persistent-storage
             mountPath: /var/opt/mssql
- # https://github.com/MicrosoftDocs/sql-docs/issues/5314           
       initContainers:
       - name: mssql-change-owner
         image: busybox:latest
@@ -79,6 +78,5 @@ spec:
     - name: mssql-port
       port: 1433
       targetPort: 1433
- # type: ClusterIP use LoadBalacer in prod, didt find any workaround on ingress-nginx
-   type: LoadBalancer
+  type: LoadBalancer
 
