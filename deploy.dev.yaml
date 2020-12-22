@@ -54,8 +54,10 @@ spec:
             value: "Y"
           - name: MSSQL_SA_PASSWORD
             value: "yourStrong(!)Password"
+            # volumeMounts is a list, we can mount multible directory in a container
         volumeMounts:
           - name: db-persistent-storage
+          # folder/directory in container that we wanna map
             mountPath: /var/opt/mssql
       volumes:
         - name: db-persistent-storage
